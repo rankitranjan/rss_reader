@@ -1,0 +1,19 @@
+<%- model_class = Article -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, article.link, :target => "_blank" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
