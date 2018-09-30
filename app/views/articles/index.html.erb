@@ -13,7 +13,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to article.title, feed_article_path(feed_id: article.feed, id: article) %></td>
+        <td><%= link_to article.title, article.link, :target => "_blank" %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       feed_article_path(feed_id: article.feed, id: article), :class => 'btn btn-default btn-xs' %>
